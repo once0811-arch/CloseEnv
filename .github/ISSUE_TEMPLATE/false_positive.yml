@@ -1,0 +1,30 @@
+name: False Positive
+description: Report a detector that fires on safe content.
+title: "[False positive]: "
+labels:
+  - false-positive
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste live secrets. Redact values and share detector labels, paths, and safe synthetic examples.
+  - type: input
+    id: detector
+    attributes:
+      label: Detector
+      placeholder: openai-token
+    validations:
+      required: true
+  - type: textarea
+    id: safe_example
+    attributes:
+      label: Safe synthetic example
+      description: Replace real values with fake strings.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Why this should be allowed
+    validations:
+      required: true
